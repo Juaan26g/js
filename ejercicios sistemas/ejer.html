@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<label for="password">password: </label>
+<input id="password"  name="password" type="password"> required
+        pattern="(?=^.{8,}s)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?="
+<br>
+    <label for="pais">Elige un país</label>
+    <select name="pais" id="pais">
+        <option value="España">España</option>
+        <option value="Francia">Francia</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Brasil">Brasil</option>
+        
+    </select>
+    <script>
+
+
+
+
+function validar(){
+
+let tlfn = document.querySelector('#tlfn');
+let pais = document.querySelector('#pais');
+if(pais === 'spain'){
+
+    let er= /\+?34(\d){9}/;
+    tlfn.replace("  "," ") 
+    if(er.test(tlfn)){
+
+        return true;
+
+    }else{return false;}
+}
+return true;
+
+}
+
+
+
+//siguiente ejercicio
+
+let submit1=document.getElementById("submit1")
+submit1.addEventListener("click",function(){let nombre = document.getElementById(#nombre);
+if (nombre.validity.valueMissing){
+    nombre.setCustomValidity('no se puede dejar el campo vacio');
+}else if (nombre.validity.PaternMismatch)
+}}
+)</script>
+</body>
+</html>

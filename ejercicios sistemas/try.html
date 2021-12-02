@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hola
+    <script>
+
+function crearCookies(clave,valor,fecha){
+    let valore = escape(valor);
+    document.cookie = `${clave}=${valore};expires=${fecha}`;
+
+}
+function borrarCookies(clave){
+    let fecha = new Date();
+
+    fecha.setDate(fecha.getMonth - 1);
+    document.cookie = `${clave}=;expires=${fecha.toUTCString()}`
+    document.cookie = `${clave}=;max-age=0;`;
+}
+
+function getObjectcookies(){
+    let miArray = document.cookie.split("; ");
+    console.log(document.cookie);
+    console.log(miArray);
+
+    let miObjeto = {};
+    miArray.forEach(function(cookie,indice){
+        
+        let miarray2 = cookie.split("=");
+        let key = miArray[0];
+        let value = miarray2[1];
+        miObjeto[key] = value;
+    })
+return miObjeto;
+}
+
+
+let fecha = new Date();
+fecha.setMilliseconds(fecha.getMilliseconds() + 10000);
+console.log(fecha.toUTCString());
+crearCookies("nombre2", "Ignacio", fecha.toUTCString());
+console.log(document.cookie);
+    </script>
+</body>
+</html>

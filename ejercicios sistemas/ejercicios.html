@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hola
+    
+</body>
+</html>
+<script>
+function crearCookies(clave,valor,fecha){
+    let valore = escape(valor);
+    document.cookie = `${clave}=${valore};expires=${fecha}`;
+
+}
+let fecha = new Date();
+fecha.setMilliseconds(fecha.getMilliseconds() +10000);
+console.log(fecha.toUTCString());
+crearCookies("hola", "asdf=$;;;;dfdgsdev", fecha.toUTCString());
+document.cookie = "nombre=Juan";
+document.cookie = "apellidos=Gil Sánchez";
+console.log(document.cookie)
+
+</script>
+
